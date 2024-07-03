@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interwood - A Virtual Interior Designing Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Interwood - A Virtual Interior Designing Website</h1> 
+        <div id="feature-buttons">
+            <button onclick="showFeature('paint')">Change Paint</button>
+            <button onclick="showFeature('furniture')">Add Furniture</button>
+            <button onclick="showFeature('windows')">Add Windows</button>
+            <button onclick="showFeature('tiles')">Add Tiles</button>
+        </div>
+    </header>
+    <main>
+        <section id="description-section">
+            <h2>Interwood - A Virtual Interior Designing Website</h2>
+            <p>Our application allows you to redesign your home virtually. Upload pictures of your room, set dimensions, and receive suggestions for the best furniture and design elements suited for your space.</p>
+            <button id="get-started-btn">Get Started</button>
+        </section>
+        <section id="form-section" style="display: none;">
+            <h2 id="feature-title"></h2>
+            <input type="file" id="room-image" accept="image/*">
+            <input type="hidden" id="selected-feature">
+            <label for="length">Length:</label>
+            <input type="number" id="length" placeholder="Enter length in meters">
+            <label for="width">Width:</label>
+            <input type="number" id="width" placeholder="Enter width in meters">
+            <button onclick="uploadImage()">Upload</button>
+            <button id="back-btn">Back</button>
+        </section>
+        <section id="suggestions-section" style="display: none;">
+            <h2>Design Suggestions</h2>
+            <div id="suggestions">
+                <!-- Suggestion images will be appended here -->
+            </div>
+            <button id="back-to-form-btn">Back</button>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
