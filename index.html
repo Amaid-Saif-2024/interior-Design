@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Interwood-A Virtual Interior Designing Website</h1>
+        <div id="feature-buttons">
+            <button onclick="showfeature('paint')">Change paint</button>
+            <button onclick="showfeature('furniture')">Add furniture</button>
+            <button onclick="showfeature('windows')">Add windows</button>
+            <button onclick="showfeature('tiles')">Change tiles</button>
+        </div>
+    </header>
+    <main>
+        <section id="description-section">
+            <h2>Interwood - A Virtual Interior Designing Website</h2>
+            <p>Our application allows you to redesign your home virtually. Upload pictures of your room, set dimension, and receive suggestions for the best furniture and design elements suited for your space.</p>
+            <button id="get-started-btn">get started</button>
+        </section>
+        <section id="form-section" style="display: none;">
+            <h2 id="feature-title"></h2>
+            <input type="file" id="room-image" accept="image/*">
+            <input type="hidden" id="selected-feature">
+            
+
+            
