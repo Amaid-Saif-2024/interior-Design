@@ -1,2 +1,96 @@
 body {
-    font-family: Arial}
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display : flex;
+    flex-direction: column;
+    align-items: centre;
+    justify-content: centre;
+    background-image: url('../images/background.jpg'); 
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat ;
+}
+
+ header{
+    background-color: rgb(76, 175, 80,0.8);
+    color: white;
+    padding: item;
+    width: 100;
+    text-align: center;
+ }
+
+ #feature-buttons{
+    margin-top: 1em;
+ }
+  
+ #feature-buttons button{
+    background-color: #70a8e4;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border-radius: 5px;
+    margin: 0.2em;
+    cursor: pointer;
+    width: auto;
+ }
+
+ main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+    width: 50%;
+    margin-top: 50px;
+ }
+
+ section {
+    margin-bottom: 2em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    text-align: center;
+ }
+
+ label {
+     display: block;
+     margin-top: 1em;
+ }
+
+ input, button{
+     width:100;
+     padding: 0.5em;
+     margin-top: 0.5em;
+ }
+
+  button{
+     cursor: pointer;
+  }
+
+  #description-section button,
+  #form-section button,
+  #suggestion-section button{
+    background-color: #70a8e4;  /* Change to a more visible color */
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border-radius: 5px;
+    margin-top: 0.5em;
+    width: auto;  /* Decrease the width of the buttons */
+  }
+
+  #form-section{
+      display: none;
+  }
+
+  #suggestion-section {
+     display: none;
+  }
+
+
