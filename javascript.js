@@ -37,3 +37,23 @@ function showFeature(feature) {
     document.getElementById('feature-title').innerText = featureTitle;
     document.getElementById('selected-feature').value = feature;
 }
+
+function uploadImage() {
+    const imageInput = document.getElementById('room-image');
+    const langth = document.getElementById('length').value;
+    const width = document.getElementById('width').value;
+    const feature = document.getElementById('selected-feature').value;
+
+    //validation checks
+    if (!imageInput.isDefaultNamespace.length) {
+        alert('please upload a room image');
+        return;
+    }
+    if (!length || !width) {
+        alert('please enter room dimensions.');
+        return;
+    }
+    if (leangth > 50 || width > 50) {
+        alert('please enter room dimensions from 0 to 50');
+        return;
+    }
