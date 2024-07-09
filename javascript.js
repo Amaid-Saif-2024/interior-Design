@@ -57,3 +57,5 @@ function uploadImage() {
         alert('please enter room dimensions from 0 to 50');
         return;
     }
+    const formData = new formDataData ();
+    formData.append ()
