@@ -58,4 +58,4 @@ function uploadImage() {
         return;
     }
     const formData = new formDataData ();
-    formData.append ()
+    formData.append 
