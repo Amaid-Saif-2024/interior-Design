@@ -58,4 +58,34 @@ function uploadImage() {
         return;
     }
     const formData = new formDataData ();
-    formData.append 
+    formData.append('file', imageInput.files[0]);
+    formData.append('lenght', length);
+    formData.append('widht', width);
+    formData.append('feature', feature);
+
+    fetch('/upload' ,{
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.suggestions){
+            const suggestionsContainer = document.getElementById('suggestion');
+            suggestionsContainer.innerHTML = '';   // clear pervious suggestion
+            data.suggestions.forEach(imageUrl => {
+                imgElement.src = imageUrl;
+                imgElement.style.width = '100%';
+                suggestionsContainer.appendChild(imgElement);
+                
+            });
+            document.getElementById('.form-section').style.display = 'none';
+            document.getElementById('suggestions-section').style.display = 'block';
+        } else {
+            alert(data.message);
+
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
