@@ -93,4 +93,30 @@ body {
      display: none;
   }
 
+  \* edit design
+ #edit-design-section {
+   display: none; /* hide the edit design section by default */
+ }
+ 
+ #edit-design-input {
+   width: 100%;
+   height: 200px;
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+ }
+ 
+ #save-edit-btn {
+   background-color: #4CAF50;
+   color: #fff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+ #save-edit-btn:hover {
+   background-color: #3e8e41;
+ }
+
+
 
