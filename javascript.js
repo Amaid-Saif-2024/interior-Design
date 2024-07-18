@@ -83,6 +83,42 @@ function uploadImage() {
     .catch(error => {
         console.error('Error:', error);
     });
+      // Get the edit design button and attach an event listener
+       document.getElementById('edit-design-btn').addEventListener('click', editDesign);
+
+      // Get the save edit button and attach an event listener
+      document.getElementById('save-edit-btn').addEventListener('click', saveEdit);
+
+// The editDesign function
+function editDesign() {
+  const designSection = document.getElementById('suggestions-section');
+  const editSection = document.getElementById('edit-design-section');
+  const designImages = designSection.querySelector('#suggestions').innerHTML;
+  const editInput = document.getElementById('edit-design-input');
+
+  // Show the edit design section and hide the design section
+  designSection.style.display = 'none';
+  editSection.style.display = 'block';
+
+  // Populate the edit input with the current design images
+  editInput.value = designImages;
+}
+
+// The saveEdit function
+function saveEdit() {
+  const editInput = document.getElementById('edit-design-input');
+  const designSection = document.getElementById('suggestions-section');
+  const suggestionsContainer = designSection.querySelector('#suggestions');
+
+  // Get the edited design images from the input
+  const editedDesign = editInput.value;
+
+  // Update the design section with the edited design images
+  suggestionsContainer.innerHTML = editedDesign;
+   // Hide the edit design section and show the design section
+   document.getElementById('edit-design-section').style.display = 'none';
+   designSection.style.display = 'block';
+ }
         // Get the share design button and attach an event listener
     document.getElementById('share-design-btn').addEventListener('click', shareDesign);
 
