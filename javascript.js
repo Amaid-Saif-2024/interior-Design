@@ -88,4 +88,33 @@ function uploadImage() {
     .catch(error => {
         console.error('Error:', error);
     });
+        // Get the share design button and attach an event listener
+    document.getElementById('share-design-btn').addEventListener('click', shareDesign);
+
+    // Get the copy link button and attach an event listener
+    document.getElementById('copy-link-btn').addEventListener('click', copyLink);
+
+    // The shareDesign function
+    function shareDesign() {
+    const designSection = document.getElementById('design-section');
+    const shareSection = document.getElementById('share-design-section');
+
+  // Show the share design section and hide the design section
+  designSection.style.display = 'none';
+  shareSection.style.display = 'block';
+
+  // Get the design images and add them to the share link
+  const designImages = designSection.querySelector('#design-images').innerHTML;
+  const shareInput = document.getElementById('share-design-input');
+  shareInput.value += designImages;
+}
+
+// The copyLink function
+function copyLink() {
+  const shareInput = document.getElementById('share-design-input');
+  shareInput.select();
+  document.execCommand('copy');
+}
+
+
 }
