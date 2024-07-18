@@ -147,5 +147,31 @@ function copyLink() {
   document.execCommand('copy');
 }
 
+//////// Get the show history button and attach an event listener
+document.getElementById('show-history-btn').addEventListener('click', showHistory);
 
+//////// The showHistory function
+function showHistory() {
+  const designSection = document.getElementById('design-section');
+  const historySection = document.getElementById('history-section');
+  const historyList = document.getElementById('history-list');
+
+  ///////////// Show the history section and hide the design section
+  designSection.style.display = 'none';
+  historySection.style.display = 'block';
+
+  /////////// Get the design history from local storage
+  const history = localStorage.getItem('designHistory');
+  const historyArray = JSON.parse(history);
+
+  ////////// Clear the history list
+  historyList.innerHTML = '';
+
+  /////////Add each design to the history list
+  historyArray.forEach((design, index) => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `Design ${index + 1}: ${design.name}`;
+    historyList.appendChild(listItem);
+  });
+}
 }
